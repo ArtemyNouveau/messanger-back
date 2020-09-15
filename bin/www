@@ -1,0 +1,174 @@
+#!/usr/bin/env node
+const app = require('../app');
+const debug = require('debug')('back-end:server');
+const http = require('http');
+const mongoose = require('mongoose');
+const dbGetters = require('../utils/getters')
+
+const port = normalizePort(process.env.PORT || '8080');
+app.set('port', port);
+
+const addUserToChat = (usersInChats, chatId, user) => (
+    usersInChats.chatsById.hasOwnProperty(chatId) ?
+        {
+            ...usersInChats,
+            chatsAllIds: [...new Set([...usersInChats.chatsAllIds, chatId])],
+            chatsById: {
+                ...usersInChats.chatsById,
+                [chatId]: {
+                    ...usersInChats.chatsById[chatId],
+                    users: [
+                        ...usersInChats.chatsById[chatId].users,
+                        user
+                    ].filter((user, index, self) =>
+                        index === self.findIndex((userToCompare) => (
+                            userToCompare.email === user.email
+                        ))
+                    ),
+                }
+            }
+        } : {
+            ...usersInChats,
+            chatsById: {
+                [chatId]: {
+                    users: [
+                        user
+                    ]
+                }
+            }
+        })
+
+const removeUser = (usersInChats, userEmail) => {
+    if (usersInChats.chatsAllIds.length === 0)
+        return usersInChats
+    return {
+        ...usersInChats,
+        chatsById: usersInChats.chatsAllIds.reduce((byId, chatId) => {
+            if (!usersInChats.chatsById[chatId])
+                return byId
+            return {
+                ...usersInChats.chatsById,
+                [chatId]: {
+                    ...usersInChats.chatsById[chatId],
+                    users: usersInChats.chatsById[chatId].users.filter(user => user.email !== userEmail)
+                }
+            }
+        }, {})
+    }
+}
+
+mongoose
+    .connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@messenger.sjr8v.mongodb.net/Messenger?retryWrites=true&w=majority`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(result => {
+        const server = http.createServer(app);
+        server.listen(port);
+        server.on('error', onError);
+        server.on('listening', onListening);
+
+
+        const io = require('./socket').init(server);
+
+        let usersInCHats = {
+            chatsAllIds: [],
+            chatsById: {}
+        }
+
+        io.on('connection', (socket) => {
+            // TODO refactor socket
+            let loadedUser = null
+
+            socket.on('disconnect', () => {
+                if (loadedUser) {
+                    usersInCHats = removeUser(usersInCHats, loadedUser.email)
+
+                    loadedUser.chats.forEach(chatId => {
+                        if (usersInCHats.chatsById[chatId])
+                            io.to(chatId).emit("userDisconnected", {
+                                users: usersInCHats.chatsById[chatId].users,
+                                chatId: chatId
+                            });
+                    })
+                }
+
+                socket.removeAllListeners();
+            });
+
+            socket.on("room", payload => {
+                socket.join(payload.chatId);
+
+                if (loadedUser) {
+                    usersInCHats = addUserToChat(usersInCHats, payload.chatId, loadedUser)
+
+                    io.to(payload.chatId).emit("userConnected", {
+                        users: usersInCHats.chatsById[payload.chatId].users,
+                        chatId: payload.chatId
+                    });
+                } else {
+                    try {
+                        dbGetters.getUser(socket.userId).then(user => {
+                            loadedUser = user
+
+                            usersInCHats = addUserToChat(usersInCHats, payload.chatId, loadedUser)
+
+                            io.to(payload.chatId).emit("userConnected", {
+                                users: usersInCHats.chatsById[payload.chatId].users,
+                                chatId: payload.chatId
+                            });
+                        })
+                    } catch (err) {
+                    }
+                }
+            });
+        });
+
+        function onListening() {
+            console.log("listen on port " + port)
+            const addr = server.address();
+            const bind = typeof addr === 'string'
+                ? 'pipe ' + addr
+                : 'port ' + addr.port;
+            debug('Listening on ' + bind);
+        }
+    })
+    .catch(err => console.log(err));
+
+function normalizePort(val) {
+    const port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        return val;
+    }
+
+    if (port >= 0) {
+        return port;
+    }
+
+    return false;
+}
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    const bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
