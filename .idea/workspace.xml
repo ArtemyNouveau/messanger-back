@@ -57,7 +57,7 @@
       <workItem from="1600114786988" duration="5000" />
       <workItem from="1600114801873" duration="6440000" />
       <workItem from="1600154021307" duration="28677000" />
-      <workItem from="1600198721935" duration="883000" />
+      <workItem from="1600198721935" duration="1546000" />
     </task>
     <servers />
   </component>
@@ -65,10 +65,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="260" y="275" key="FileChooserDialogImpl" timestamp="1600154025346">
+    <state x="245" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600199604840">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state x="260" y="275" key="FileChooserDialogImpl/0.0.1920.1034@0.0.1920.1034" timestamp="1600154025346" />
+    <state x="245" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1034@0.0.1920.1034" timestamp="1600199604840" />
+    <state x="260" y="275" key="FileChooserDialogImpl" timestamp="1600199830951">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="260" y="275" key="FileChooserDialogImpl/0.0.1920.1034@0.0.1920.1034" timestamp="1600199830951" />
     <state width="936" height="277" key="GridCell.Tab.0.bottom" timestamp="1600016155015">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>

@@ -1,8 +1,8 @@
 {
-  "env": {
-    "PORT": 8080,
-    "MONGO_USER": "admin",
-    "MONGO_PASSWORD": "admin",
-    "JWT_SECRET": "somesupersecretsecret"
+  env: {
+    PORT: 8080,
+    MONGO_USER: admin,
+    MONGO_PASSWORD: admin,
+    JWT_SECRET: somesupersecretsecret
   }
 }
