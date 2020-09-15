@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start-server": "PORT: 8080 MONGO_USER: admin MONGO_PASSWORD: admin JWT_SECRET: somesupersecretsecret node ./bin/www"
+    "start-server": "PORT: 8080 MONGO_USER: admin MONGO_PASSWORD: admin JWT_SECRET: somesupersecretsecret node bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
