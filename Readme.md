@@ -1,20 +1,20 @@
 #messenger backend (dev)
 
-available on https://messenger-interview.herokuapp.com/
+[Deployed on heroku.](https://messenger-interview.herokuapp.com/)
 
-##TODO:
-####Common:
+## TODO:
+#### Common:
 - [ ] TS
 - [ ] Refactor!!!
 - [ ] Test!!!
 ---
-####DB:
+#### DB:
 - [ ] Replace date and timestamps 
 - [ ] Limit messages to fetch per one time
 - [ ] ? Apply Repository pattern
 - [ ] Add autoincrement field to message for sorting func!!!
 ---
-####Rest:
+#### Rest:
 - [ ] Add endpoints for updating Chat and message
 - [ ] Add delete endpoints
 - [ ] Spread auth to auth and user related functions
@@ -23,7 +23,7 @@ available on https://messenger-interview.herokuapp.com/
 - [ ] Store images in public folder and store their paths
 - [ ] Refresh token!!!
 ---
-####Socket:
+#### Socket:
 - [ ] Force one socket connection per user
 - [ ] Spread socket handlers in different files
 - [ ] Add error handler for socket errors
@@ -33,6 +33,6 @@ available on https://messenger-interview.herokuapp.com/
 - [ ] Middleware for checking and preprocessing the payload like in routs 
 - [ ] Cash and delete data for each socket
 ---
-####Additional:
+#### Additional:
 - [ ] WebRTC video calls for room
 - [ ] node cluster
