@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="88bdbed9-52b3-4e71-8d4e-16f3d0b170c4" name="Default Changelist" comment="" />
+    <list default="true" id="88bdbed9-52b3-4e71-8d4e-16f3d0b170c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +39,9 @@
         <option value="tsconfig.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -58,21 +86,33 @@
       <workItem from="1600114801873" duration="6440000" />
       <workItem from="1600154021307" duration="28677000" />
       <workItem from="1600198721935" duration="4056000" />
+      <workItem from="1600240589342" duration="1430000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="245" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600199604840">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
     <state x="245" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1034@0.0.1920.1034" timestamp="1600199604840" />
-    <state x="260" y="275" key="FileChooserDialogImpl" timestamp="1600199830951">
+    <state x="260" y="275" key="FileChooserDialogImpl" timestamp="1600242181482">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state x="260" y="275" key="FileChooserDialogImpl/0.0.1920.1034@0.0.1920.1034" timestamp="1600199830951" />
+    <state x="260" y="275" key="FileChooserDialogImpl/0.0.1920.1034@0.0.1920.1034" timestamp="1600242181482" />
     <state width="936" height="277" key="GridCell.Tab.0.bottom" timestamp="1600016155015">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>

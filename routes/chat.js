@@ -33,17 +33,4 @@ router.get(
     chatController.getChat
 )
 
-// router.put(
-//     '/:chatId',
-//     isAuth,
-//     [
-//         body('title')
-//             .trim()
-//             .isLength({ min: 5 }),
-//     ],
-//     feedController.updateChat
-// );
-//
-// router.delete('/:chatId', isAuth, feedController.deleteChat);
-
 module.exports = router;
