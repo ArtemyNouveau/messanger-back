@@ -36,3 +36,14 @@
 #### Additional:
 - [ ] WebRTC video calls for room
 - [ ] node cluster
+
+
+---
+Default Readme
+---
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
