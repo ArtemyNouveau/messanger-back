@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/messanger-front/static/css/main.69eda509.chunk.css",
+    "main.js": "/messanger-front/static/js/main.74b45d61.chunk.js",
+    "main.js.map": "/messanger-front/static/js/main.74b45d61.chunk.js.map",
+    "runtime-main.js": "/messanger-front/static/js/runtime-main.3f8902c6.js",
+    "runtime-main.js.map": "/messanger-front/static/js/runtime-main.3f8902c6.js.map",
+    "static/js/2.688337e9.chunk.js": "/messanger-front/static/js/2.688337e9.chunk.js",
+    "static/js/2.688337e9.chunk.js.map": "/messanger-front/static/js/2.688337e9.chunk.js.map",
+    "index.html": "/messanger-front/index.html",
+    "precache-manifest.43b31f4e1e76a77e5f7abf9070cb8c83.js": "/messanger-front/precache-manifest.43b31f4e1e76a77e5f7abf9070cb8c83.js",
+    "service-worker.js": "/messanger-front/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/messanger-front/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.688337e9.chunk.js.LICENSE.txt": "/messanger-front/static/js/2.688337e9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f8902c6.js",
+    "static/js/2.688337e9.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.74b45d61.chunk.js"
+  ]
+}
